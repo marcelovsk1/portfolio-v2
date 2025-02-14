@@ -29,6 +29,7 @@ const Projects = () => {
       liveDemo:
         "https://www.linkedin.com/feed/update/urn:li:activity:7191889677941948416/",
       language: "Swift",
+      year: "2024",
     },
     {
       title: "3D Content in iOS",
@@ -37,94 +38,7 @@ const Projects = () => {
       link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
       language: "Swift",
-    },
-    {
-      title: "News App",
-      description: "Firebase + an API for a news application in Swift.",
-      imgUrl: newsapp,
-      link: "https://github.com/marcelovsk1/NewsApp",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
-      language: "Swift",
-    },
-    {
-      title: "Netflix Clone",
-      description: "A clone of Netflix in Objective-C with movie and TV shows",
-      imgUrl: netflixapp,
-      link: "https://github.com/marcelovsk1/netflix-app-clone",
-      liveDemo: null,
-      language: "Objective-C",
-    },
-    {
-      title: "Mensager App",
-      description: "A messaging platform in Swift (send/receive messages instantly)",
-      imgUrl: mensagerapp,
-      link: "https://github.com/marcelovsk1/message-app1/tree/master",
-      liveDemo: null,
-      language: "Swift",
-    },
-    {
-      title: "Social Media App",
-      description: "Swift app replicating core features of a photo-sharing platform",
-      imgUrl: socialmedia,
-      link: "https://github.com/marcelovsk1/SocialMediaClone",
-      liveDemo: null,
-      language: "Swift",
-    },
-    {
-      title: "Weather App",
-      description: "Displays weather data from an API in a simple Swift app",
-      imgUrl: weatherApp,
-      link: "https://github.com/marcelovsk1/SwiftWeatherApp",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7120763456319799296/",
-      language: "Swift",
-    },
-    {
-      title: "Guess PvP Game",
-      description: "A multiplayer guessing game (identify doodles)",
-      imgUrl: guessgame,
-      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
-      liveDemo: null,
-      language: "Swift",
-    },
-    {
-      title: "Scraper Bot",
-      description: "Automates web data collection through scraping techniques",
-      imgUrl: scraper,
-      link: "https://github.com/marcelovsk1/scraper-demo",
-      liveDemo: null,
-      language: "Python/JS",
-    },
-    {
-      title: "Game of Codes",
-      description: "A PvP game in Rails + JS, introducing coding to beginners",
-      imgUrl: gameofcodesImg,
-      link: "https://github.com/KittySou/game-of-codes",
-      liveDemo: "https://www.game-of-codes.pro/",
-      language: "Rails + JS",
-    },
-    {
-      title: "Landing Page",
-      description: "A concept landing page for Adidas Originals",
-      imgUrl: adidasoriginals,
-      link: "https://github.com/marcelovsk1/rct-4",
-      liveDemo: null,
-      language: "React.Js",
-    },
-    {
-      title: "My Portfolio",
-      description: "My personal portfolio, built with React.js",
-      imgUrl: portfolio,
-      link: "https://github.com/marcelovsk1/my-new-portfolio",
-      liveDemo: null,
-      language: "React.Js",
-    },
-    {
-      title: "Game Dev Portfolio",
-      description: "My Game portfolio, built in React.js",
-      imgUrl: game_portfolio,
-      link: "https://github.com/marcelovsk1/portfolio-games",
-      liveDemo: null,
-      language: "React.Js",
+      year: "2024",
     },
     {
       title: "Cube Rumble",
@@ -133,6 +47,7 @@ const Projects = () => {
       link: "https://github.com/marcelovsk1/BoxRumble",
       liveDemo: null,
       language: "Unity/C#",
+      year: "2024",
     },
     {
       title: "3D Open World",
@@ -141,7 +56,107 @@ const Projects = () => {
       link: "https://github.com/marcelovsk1/BoxRumble",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7183925251368468481/",
       language: "Unity/C#",
+      year: "2024",
     },
+    {
+      title: "News App",
+      description: "Firebase + an API for a news application in Swift.",
+      imgUrl: newsapp,
+      link: "https://github.com/marcelovsk1/NewsApp",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
+      language: "Swift",
+      year: "2023",
+    },
+    {
+      title: "Netflix Clone",
+      description: "A clone of Netflix in Objective-C with movie and TV shows",
+      imgUrl: netflixapp,
+      link: "https://github.com/marcelovsk1/netflix-app-clone",
+      liveDemo: null,
+      language: "Objective-C",
+      year: "2024",
+    },
+    {
+      title: "Mensager App",
+      description: "A messaging platform in Swift (send/receive messages instantly)",
+      imgUrl: mensagerapp,
+      link: "https://github.com/marcelovsk1/message-app1/tree/master",
+      liveDemo: null,
+      language: "Swift",
+      year: "2023",
+    },
+    {
+      title: "Social Media App",
+      description: "Swift app replicating core features of a photo-sharing platform",
+      imgUrl: socialmedia,
+      link: "https://github.com/marcelovsk1/SocialMediaClone",
+      liveDemo: null,
+      language: "Swift",
+      year: "2023",
+    },
+    {
+      title: "Weather App",
+      description: "Displays weather data from an API in a simple Swift app",
+      imgUrl: weatherApp,
+      link: "https://github.com/marcelovsk1/SwiftWeatherApp",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7120763456319799296/",
+      language: "Swift",
+      year: "2023",
+    },
+    {
+      title: "Guess PvP Game",
+      description: "A multiplayer guessing game (identify doodles)",
+      imgUrl: guessgame,
+      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
+      liveDemo: null,
+      language: "Swift",
+      year: "2023",
+    },
+    {
+      title: "Scraper Bot",
+      description: "Automates web data collection through scraping techniques",
+      imgUrl: scraper,
+      link: "https://github.com/marcelovsk1/scraper-demo",
+      liveDemo: null,
+      language: "Python/JS",
+      year: "2024",
+    },
+    {
+      title: "Game of Codes",
+      description: "A PvP game in Rails + JS, introducing coding to beginners",
+      imgUrl: gameofcodesImg,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://www.game-of-codes.pro/",
+      language: "Rails + JS",
+      year: "2023",
+    },
+    {
+      title: "Landing Page",
+      description: "A concept landing page for Adidas Originals",
+      imgUrl: adidasoriginals,
+      link: "https://github.com/marcelovsk1/rct-4",
+      liveDemo: null,
+      language: "React.Js",
+      year: "2024",
+    },
+    {
+      title: "My Portfolio",
+      description: "My personal portfolio, built with React.js",
+      imgUrl: portfolio,
+      link: "https://github.com/marcelovsk1/my-new-portfolio",
+      liveDemo: null,
+      language: "React.Js",
+      year: "2024",
+    }
+    // {
+    //   title: "Game Dev Portfolio",
+    //   description: "My Game portfolio, built in React.js",
+    //   imgUrl: game_portfolio,
+    //   link: "https://github.com/marcelovsk1/portfolio-games",
+    //   liveDemo: null,
+    //   language: "React.Js",
+    //   year: "2024",
+    // },
   ];
 
   // Estado p/ guardar o projeto selecionado
@@ -167,11 +182,14 @@ const Projects = () => {
                   className="project-image-large"
                 />
               </div>
+              <p className="project-description">
+                {selectedProject.description}
+              </p>
               <p className="project-language">
                 Language: <span>{selectedProject.language}</span>
               </p>
-              <p className="project-description">
-                {selectedProject.description}
+              <p className="project-language">
+                <span>{selectedProject.year}</span>
               </p>
 
               <div className="button-group">
