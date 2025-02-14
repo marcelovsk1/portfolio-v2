@@ -1,225 +1,190 @@
-/* Seção Geral */
 .projects-section {
   width: 100%;
-  min-height: 100vh;
-  padding: 3rem 1rem;
-}
-
-/* Container principal (grid 2 colunas) */
-.projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2.2fr 1fr;
-  gap: 2rem;
-}
-
-/* Coluna Esquerda */
-.project-detail {
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  height: 42rem;
-  /* box-shadow: 0 6px 20px rgba(0,0,0,0.05); */
-  border: 1px solid #ddd;
-  transition: transform 0.2s ease;
-}
-.project-detail:hover {
-  transform: translateY(-2px);
-}
-
-.project-title {
-  margin-top: 0;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-  text-align: start;
-}
-
-.image-wrapper {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1.5rem;
-  border-radius: 0px;
+  min-height: 40vh;
+  padding: 10rem 1rem;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  border-radius: 20px !important;
+  box-shadow: 0px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.project-image-large {
+/* DUAS LINHAS FIXAS E SCROLL LATERAL */
+.projects-section {
   width: 100%;
-  height: auto;
+  min-height: 40vh;
+  padding: 10rem 1rem;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  border-radius: 20px !important;
+  box-shadow: 0px;
+  overflow: hidden;
+}
+
+/* Grid principal */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden; /* Esconde a barra de rolagem */
+  position: relative;
+  height: 750px; /* Mantém sempre duas linhas */
+}
+
+/* Wrapper que contém as linhas */
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cada linha contendo os projetos */
+.projects-row {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollLoop 100s linear infinite;
+}
+
+/* Animação de scroll lateral */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Cada projeto ocupa um espaço fixo */
+.project-card {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 380px;
+}
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Imagem do projeto */
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Categoria do projeto */
+.project-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
   border-radius: 10px;
+  font-weight: bold;
 }
 
-/* Texto */
-.project-language {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #777;
-  font-size: .9rem;
+/* Conteúdo do projeto */
+.project-content {
+  padding: 15px;
   text-align: start;
-  margin-left: 1rem;
-}
-.project-language span {
-  color: #6200ea; /* Destaque */
-  font-weight: 600;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.project-description {
-  margin-bottom: 1rem;
-  color: #555;
-  line-height: 1.5;
-  font-size: 1.2rem;
-  text-align: start;
-  max-width: 80%;
-  margin-left: 1rem;
-  margin-right: auto;
+.project-content h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.project-content p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.4;
 }
 
 /* Botões */
-.button-group {
+.project-buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: start;
-  margin-top: 1.5rem;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.github-btn {
+/* Botão padrão */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  transition: all 0.3s ease;
   text-decoration: none;
-  padding: 0.7rem 1.4rem !important;
-  border-radius: 2px;
-  color: #333;
-  background-color: transparent;
-  border: 1px solid #333;
-  font-weight: 500;
-  font-size: .9rem;
-  transition: background-color 0.3s ease, transform 0.2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1rem;
 }
 
-.github-btn:hover {
-  transform: scale(1.03);
-  border: 1.5px solid #333;
+.btn:hover {
+  background: white;
+  color: black;
 }
 
-.demo-button {
-  text-decoration: none;
-  padding: 0.7rem 1.4rem !important;
-  border-radius: 2px;
-  color: #333;
-  background-color: transparent;
-  border: 1px solid #333;
-  font-weight: 500;
-  font-size: .9rem;
-  transition: background-color 0.3s ease, transform 0.2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1rem;
-}
-
-.demo-button:hover {
-  transform: scale(1.03);
-  border: 1.5px solid #333;
-}
-
-/* Coluna Direita (lista) */
-.project-list {
-  background: #fff;
-  border-radius: 12px;
-  height: 46rem;
-  overflow-y: auto;
-  position: relative;
-  border: 1px solid #ddd;
-
-  /* Para Firefox */
-  scrollbar-width: none; 
-  /* Para IE e versões antigas do Edge */
-  -ms-overflow-style: none; 
-}
-
-/* Para Chrome, Safari e navegadores baseados em WebKit */
-.project-list::-webkit-scrollbar {
-  width: 0;
-  background: transparent; 
-}
-
-/* Opcional: se quiser um background específico */
-.project-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.project-list::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 0;
+.btn.demo {
+  background: #007BFF;
   border: none;
 }
 
-.project-list h3 {
-  position: sticky;       
-  top: 0;
-  background: #fff;         
-  margin: 0;
-  padding: 1.5rem;
-  font-size: 1.5rem;
-  color: #333;
-  text-align: center;
-  font-weight: 600;
-  z-index: 10;          
-  border-bottom: 1px solid #333;
+.btn.demo:hover {
+  background: #0056b3;
 }
 
-/* Lista em si */
-.project-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .projects-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 700px;
+  }
+
+  .project-card {
+    flex: 0 0 auto;
+    width: 280px;
+  }
 }
 
-/* Cada item */
-.project-list li {
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  font-size: .9rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-  transition: background-color 0.3s, color 0.3s;
-  /* border-radius: 6px; */
-}
-
-/* Hover */
-.project-list li:hover {
-  background-color: #f7f9fc;
-}
-
-/* Projeto ativo */
-.active-project {
-  background-color: #fafbff;
-  border: 1px solid #333;
-  font-weight: 600;
-}
-
-/* Responsividade */
 @media (max-width: 768px) {
-  .projects-container {
-    grid-template-columns: 1fr;
+  .projects-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 700px;
   }
 
-  .project-detail {
-    margin-bottom: 2rem;
-  }
-
-  .project-list {
-    height: auto; /* ou um valor menor */
-  }
-
-  .project-description {
-    max-width: 100%;
+  .project-card {
+    flex: 0 0 auto;
+    width: 260px;
   }
 }

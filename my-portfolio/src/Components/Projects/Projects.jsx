@@ -158,91 +158,61 @@ const Projects = () => {
     //   year: "2024",
     // },
   ];
-
-  // Estado p/ guardar o projeto selecionado
-  const [selectedProject, setSelectedProject] = useState(allProjects[0]);
-
-  const handleProjectClick = (project) => {
-    setSelectedProject(project);
-  };
-
+  
   return (
     <section className="projects-section">
-      <div className="projects-container">
-        
-        {/* Coluna Esquerda: Detalhes do projeto selecionado */}
-        <div className="project-detail">
-          {selectedProject ? (
-            <>
-              <h2 className="project-title">{selectedProject.title}</h2>
-              <div className="image-wrapper">
-                <img
-                  src={selectedProject.imgUrl}
-                  alt={selectedProject.title}
-                  className="project-image-large"
-                />
+      <div className="projects-grid">
+        <div className="projects-wrapper">
+          {/* Primeira linha de projetos */}
+          <div className="projects-row">
+            {allProjects.slice(0, Math.ceil(allProjects.length / 2)).map((project, index) => (
+              <div key={index} className="project-card">
+                <div className="project-image">
+                  <img src={project.imgUrl} alt={project.title} />
+                  <span className="project-category">{project.language}</span>
+                </div>
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="buttons">
+                    <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+                    {project.liveDemo && (
+                      <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <p className="project-description">
-                {selectedProject.description}
-              </p>
-              <p className="project-language">
-                Language: <span>{selectedProject.language}</span>
-              </p>
-              <p className="project-language">
-                <span>{selectedProject.year}</span>
-              </p>
-
-              <div className="button-group">
-                {/* Link GitHub */}
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="github-btn"
-                >
-                  GitHub
-                </a>
-                {/* Live Demo se existir */}
-                {selectedProject.liveDemo && (
-                  <a
-                    href={selectedProject.liveDemo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="demo-button"
-                  >
-                    Live Demo
-                  </a>
-                )}
-              </div>
-            </>
-          ) : (
-            <p>Select a project on the right list.</p>
-          )}
-        </div>
-
-        {/* Coluna Direita: Lista de projetos */}
-        <div className="project-list">
-          <h3>Projects</h3>
-          <ul>
-            {allProjects.map((proj, idx) => (
-              <li
-                key={idx}
-                onClick={() => handleProjectClick(proj)}
-                className={
-                  proj.title === selectedProject?.title
-                    ? "active-project"
-                    : ""
-                }
-              >
-                {proj.title}
-              </li>
             ))}
-          </ul>
+          </div>
+  
+          {/* Segunda linha de projetos */}
+          <div className="projects-row">
+            {allProjects.slice(Math.ceil(allProjects.length / 2)).map((project, index) => (
+              <div key={index + allProjects.length} className="project-card">
+                <div className="project-image">
+                  <img src={project.imgUrl} alt={project.title} />
+                  <span className="project-category">{project.language}</span>
+                </div>
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="buttons">
+                    <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+                    {project.liveDemo && (
+                      <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );
+  
+  
+  
 };
 
 export default Projects;
