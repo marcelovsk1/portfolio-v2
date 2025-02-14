@@ -1,0 +1,123 @@
+
+/* Nome do lado esquerdo */
+.n-left {
+  display: none; /* Escondemos o nome na versão de pílula para foco nos links */
+}
+
+/* Navbar principal */
+.n-wrapper {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background-color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Lista de navegação centralizada */
+.n-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.n-list ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.n-list ul li {
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Bordas arredondadas para estilo de botão */
+  transition: background-color 0.3s ease;
+}
+
+.n-list ul li:hover {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+.n-list ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.n-list ul li a:hover {
+  color: #007AFF;
+}
+
+/* Ícone do menu mobile */
+#mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Estilo para o menu mobile */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  padding: 2rem;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.mobile-menu ul li a:hover {
+  color: #007AFF;
+}
+
+
+/* Responsividade para dispositivos menores */
+@media screen and (max-width: 768px) {
+  .n-wrapper {
+    top: 10px; /* Ajuste para dispositivos menores */
+    width: 90%; /* Ocupa quase toda a largura no mobile */
+  }
+
+  .n-list {
+    display: none;
+  }
+
+  #mobile-menu-icon {
+    display: block;
+  }
+}
+

@@ -1,0 +1,225 @@
+/* Seção Geral */
+.projects-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+/* Container principal (grid 2 colunas) */
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 2rem;
+}
+
+/* Coluna Esquerda */
+.project-detail {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  height: 42rem;
+  /* box-shadow: 0 6px 20px rgba(0,0,0,0.05); */
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease;
+}
+.project-detail:hover {
+  transform: translateY(-2px);
+}
+
+.project-title {
+  margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: start;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image-large {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Texto */
+.project-language {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #777;
+  font-size: .9rem;
+  text-align: start;
+  margin-left: 1rem;
+}
+.project-language span {
+  color: #6200ea; /* Destaque */
+  font-weight: 600;
+}
+
+.project-description {
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  text-align: start;
+  max-width: 80%;
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+/* Botões */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  margin-top: 1.5rem;
+}
+
+.github-btn {
+  text-decoration: none;
+  padding: 0.7rem 1.4rem !important;
+  border-radius: 2px;
+  color: #333;
+  background-color: transparent;
+  border: 1px solid #333;
+  font-weight: 500;
+  font-size: .9rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.github-btn:hover {
+  transform: scale(1.03);
+  border: 1.5px solid #333;
+}
+
+.demo-button {
+  text-decoration: none;
+  padding: 0.7rem 1.4rem !important;
+  border-radius: 2px;
+  color: #333;
+  background-color: transparent;
+  border: 1px solid #333;
+  font-weight: 500;
+  font-size: .9rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.demo-button:hover {
+  transform: scale(1.03);
+  border: 1.5px solid #333;
+}
+
+/* Coluna Direita (lista) */
+.project-list {
+  background: #fff;
+  border-radius: 12px;
+  height: 46rem;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid #ddd;
+
+  /* Para Firefox */
+  scrollbar-width: none; 
+  /* Para IE e versões antigas do Edge */
+  -ms-overflow-style: none; 
+}
+
+/* Para Chrome, Safari e navegadores baseados em WebKit */
+.project-list::-webkit-scrollbar {
+  width: 0;
+  background: transparent; 
+}
+
+/* Opcional: se quiser um background específico */
+.project-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+}
+
+.project-list h3 {
+  position: sticky;       
+  top: 0;
+  background: #fff;         
+  margin: 0;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  z-index: 10;          
+  border-bottom: 1px solid #333;
+}
+
+/* Lista em si */
+.project-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada item */
+.project-list li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: .9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+  /* border-radius: 6px; */
+}
+
+/* Hover */
+.project-list li:hover {
+  background-color: #f7f9fc;
+}
+
+/* Projeto ativo */
+.active-project {
+  background-color: #fafbff;
+  border: 1px solid #333;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail {
+    margin-bottom: 2rem;
+  }
+
+  .project-list {
+    height: auto; /* ou um valor menor */
+  }
+
+  .project-description {
+    max-width: 100%;
+  }
+}

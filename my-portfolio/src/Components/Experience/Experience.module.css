@@ -1,0 +1,166 @@
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+.toggleButton {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #333;
+  border-radius: 2px;
+  /* transition: transform 0.3s ease; */
+}
+
+.toggleButton:hover {
+  background-color: transparent;
+  border: 2px solid #333;
+  color: #333;
+  /* transform: translateY(-1px); */
+}
+
+.activeButton {
+  background-color: #6200ea;
+  color: white;
+  /* transition: transform 0.3s ease; */
+}
+
+.activeButton:hover {
+  /* transform: translateY(-1px); */
+  background-color: #6200ea;
+  color: white;
+  border: none;
+}
+
+.contentContainer {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.skills {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.history {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card,
+.historyCard {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: start;
+  transition: transform 0.3s ease;
+}
+
+.card:hover,
+.historyCard:hover {
+  border: 1px solid #333;
+  transform: translateY(-1px);
+}
+
+.cardImage {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImage img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cardTitle {
+  font-size: .9rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.historyCardHeader {
+  display: flex;
+  color: #333;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.historyCardHeader img {
+  height: 90px;
+  border-radius: 10px;
+}
+
+.historyCardHeader h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.historyCardHeader p {
+  font-size: .9rem;
+  color: #666;
+  margin: 0;
+}
+
+.historyCardHeader span {
+  position: relative;
+  top: -10px;
+  font-size: .9rem;
+  color: #888;
+}
+
+.historyCard ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.historyCard ul li {
+  font-size: .9rem;
+  color: #555;
+  margin-bottom: 5px;
+  padding-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
