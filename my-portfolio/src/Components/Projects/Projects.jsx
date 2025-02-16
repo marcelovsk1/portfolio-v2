@@ -136,7 +136,7 @@ const Projects = () => {
   
   return (
     <section className="projects-section">
-      <h2>Projects</h2>
+      <h2 className="projects-title">Projects</h2>
       <p className="project-description">A collection of my work, featuring mobile apps, web applications, games, and automation projects built with Swift, React, Shopify, Rails, Unity, and Python. Focused on clean code, innovation, and great user experiences.</p>
       <div className="projects-grid">
         <div className="projects-wrapper">

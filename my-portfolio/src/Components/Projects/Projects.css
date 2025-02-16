@@ -2,13 +2,21 @@
   width: 100%;
   max-width: 1400px; 
   min-height: 35vh;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
   background-color: #111;
   color: white;
   text-align: center;
   border-radius: 15px;
   overflow: hidden;
   margin: 4rem auto 0;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
 .project-description {
