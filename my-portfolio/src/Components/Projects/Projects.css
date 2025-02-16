@@ -22,7 +22,7 @@
 .project-description {
   margin-bottom: 3rem;
   font-size: .7rem;
-  color: #48bddd;
+  color: #007BFF;
 }
 
 .projects-grid {
@@ -120,6 +120,7 @@
   top: 10px;
   left: 10px;
   background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   color: #fff;
   padding: 5px 10px;
   font-size: 12px;

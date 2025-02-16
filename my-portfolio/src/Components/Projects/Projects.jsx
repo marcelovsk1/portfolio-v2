@@ -27,7 +27,7 @@ const Projects = () => {
       link: "https://github.com/marcelovsk1/Shoes-App",
       liveDemo:
         "https://www.linkedin.com/feed/update/urn:li:activity:7191889677941948416/",
-      language: "Swift",
+      language: "SwiftUi",
       year: "2024",
     },
     {
@@ -36,7 +36,7 @@ const Projects = () => {
       imgUrl: gameofcodesImg,
       link: "https://github.com/KittySou/game-of-codes",
       liveDemo: "https://www.game-of-codes.pro/",
-      language: "Rails + JS",
+      language: "Rails/JS",
       year: "2023",
     },
     {
@@ -84,7 +84,7 @@ const Projects = () => {
       imgUrl: scraper,
       link: "https://github.com/marcelovsk1/scraper-demo",
       liveDemo: null,
-      language: "Python/JS",
+      language: "Python/BeautifulSoup",
       year: "2024",
     },
     {
@@ -93,7 +93,7 @@ const Projects = () => {
       imgUrl: guessgame,
       link: "https://github.com/marcelovsk1/guess-multiplayer-game",
       liveDemo: null,
-      language: "Swift",
+      language: "SwiftUi",
       year: "2023",
     },
     {
@@ -111,7 +111,7 @@ const Projects = () => {
       imgUrl: interfaceImg,
       link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
-      language: "Swift",
+      language: "SwiftUi",
       year: "2024",
     },
     {
