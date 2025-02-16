@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Projects.css";
 
 // Importe as imagens
@@ -20,7 +19,7 @@ import world from "../../img/BEAUTIFUL_3D_WORLD1.png";
 
 const Projects = () => {
   // Todos os projetos
-  const allProjects = [
+  const projectsRow1 = [
     {
       title: "Shoes App",
       description: "3D CGI applied to Swift iOS",
@@ -29,96 +28,6 @@ const Projects = () => {
       liveDemo:
         "https://www.linkedin.com/feed/update/urn:li:activity:7191889677941948416/",
       language: "Swift",
-      year: "2024",
-    },
-    {
-      title: "3D Content in iOS",
-      description: "Integrate stunning 3D content into iOS effortlessly with Spline.",
-      imgUrl: interfaceImg,
-      link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
-      language: "Swift",
-      year: "2024",
-    },
-    {
-      title: "Cube Rumble",
-      description: "My first game project in Unity, just for fun",
-      imgUrl: boxrumble,
-      link: "https://github.com/marcelovsk1/BoxRumble",
-      liveDemo: null,
-      language: "Unity/C#",
-      year: "2024",
-    },
-    {
-      title: "3D Open World",
-      description: "A beautiful 3D open world, made using Unity Engine",
-      imgUrl: world,
-      link: "https://github.com/marcelovsk1/BoxRumble",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7183925251368468481/",
-      language: "Unity/C#",
-      year: "2024",
-    },
-    {
-      title: "News App",
-      description: "Firebase + an API for a news application in Swift.",
-      imgUrl: newsapp,
-      link: "https://github.com/marcelovsk1/NewsApp",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
-      language: "Swift",
-      year: "2023",
-    },
-    {
-      title: "Netflix Clone",
-      description: "A clone of Netflix in Objective-C with movie and TV shows",
-      imgUrl: netflixapp,
-      link: "https://github.com/marcelovsk1/netflix-app-clone",
-      liveDemo: null,
-      language: "Objective-C",
-      year: "2024",
-    },
-    {
-      title: "Mensager App",
-      description: "A messaging platform in Swift (send/receive messages instantly)",
-      imgUrl: mensagerapp,
-      link: "https://github.com/marcelovsk1/message-app1/tree/master",
-      liveDemo: null,
-      language: "Swift",
-      year: "2023",
-    },
-    {
-      title: "Social Media App",
-      description: "Swift app replicating core features of a photo-sharing platform",
-      imgUrl: socialmedia,
-      link: "https://github.com/marcelovsk1/SocialMediaClone",
-      liveDemo: null,
-      language: "Swift",
-      year: "2023",
-    },
-    {
-      title: "Weather App",
-      description: "Displays weather data from an API in a simple Swift app",
-      imgUrl: weatherApp,
-      link: "https://github.com/marcelovsk1/SwiftWeatherApp",
-      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7120763456319799296/",
-      language: "Swift",
-      year: "2023",
-    },
-    {
-      title: "Guess PvP Game",
-      description: "A multiplayer guessing game (identify doodles)",
-      imgUrl: guessgame,
-      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
-      liveDemo: null,
-      language: "Swift",
-      year: "2023",
-    },
-    {
-      title: "Scraper Bot",
-      description: "Automates web data collection through scraping techniques",
-      imgUrl: scraper,
-      link: "https://github.com/marcelovsk1/scraper-demo",
-      liveDemo: null,
-      language: "Python/JS",
       year: "2024",
     },
     {
@@ -131,12 +40,78 @@ const Projects = () => {
       year: "2023",
     },
     {
+      title: "News App",
+      description: "Firebase + an API for a news application in Swift.",
+      imgUrl: newsapp,
+      link: "https://github.com/marcelovsk1/NewsApp",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
+      language: "Swift",
+      year: "2023",
+    },
+    {
+      title: "Cube Rumble",
+      description: "My first game project in Unity, just for fun",
+      imgUrl: boxrumble,
+      link: "https://github.com/marcelovsk1/BoxRumble",
+      liveDemo: null,
+      language: "Unity/C#",
+      year: "2024",
+    },
+    {
+      title: "Netflix Clone",
+      description: "A clone of Netflix in Objective-C with movie and TV shows",
+      imgUrl: netflixapp,
+      link: "https://github.com/marcelovsk1/netflix-app-clone",
+      liveDemo: null,
+      language: "Objective-C",
+      year: "2024",
+    },
+    {
+      title: "3D Open World",
+      description: "A beautiful 3D open world, made using Unity Engine",
+      imgUrl: world,
+      link: "https://github.com/marcelovsk1/BoxRumble",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7183925251368468481/",
+      language: "Unity/C#",
+      year: "2024",
+    },
+  ];
+  const projectsRow2 = [
+
+    {
+      title: "Scraper Bot",
+      description: "Automates web data collection through scraping techniques",
+      imgUrl: scraper,
+      link: "https://github.com/marcelovsk1/scraper-demo",
+      liveDemo: null,
+      language: "Python/JS",
+      year: "2024",
+    },
+    {
+      title: "Guess PvP Game",
+      description: "A multiplayer guessing game (identify doodles)",
+      imgUrl: guessgame,
+      link: "https://github.com/marcelovsk1/guess-multiplayer-game",
+      liveDemo: null,
+      language: "Swift",
+      year: "2023",
+    },
+    {
       title: "Landing Page",
       description: "A concept landing page for Adidas Originals",
       imgUrl: adidasoriginals,
       link: "https://github.com/marcelovsk1/rct-4",
       liveDemo: null,
       language: "React.Js",
+      year: "2024",
+    },
+    {
+      title: "3D Content in iOS",
+      description: "Integrate stunning 3D content into iOS effortlessly with Spline.",
+      imgUrl: interfaceImg,
+      link: "https://github.com/marcelovsk1/3d_graphics/blob/master/3d_content/ContentView.swift",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188979149032570880/",
+      language: "Swift",
       year: "2024",
     },
     {
@@ -147,25 +122,27 @@ const Projects = () => {
       liveDemo: null,
       language: "React.Js",
       year: "2024",
-    }
-    // {
-    //   title: "Game Dev Portfolio",
-    //   description: "My Game portfolio, built in React.js",
-    //   imgUrl: game_portfolio,
-    //   link: "https://github.com/marcelovsk1/portfolio-games",
-    //   liveDemo: null,
-    //   language: "React.Js",
-    //   year: "2024",
-    // },
+    },
+    {
+      title: "Game Dev Portfolio",
+      description: "My Game portfolio, built in React.js",
+      imgUrl: game_portfolio,
+      link: "https://github.com/marcelovsk1/portfolio-games",
+      liveDemo: null,
+      language: "React.Js",
+      year: "2024",
+    },
   ];
   
   return (
     <section className="projects-section">
+      <h2>Projects</h2>
+      <p className="project-description">A collection of my work, featuring mobile apps, web applications, games, and automation projects built with Swift, React, Shopify, Rails, Unity, and Python. Focused on clean code, innovation, and great user experiences.</p>
       <div className="projects-grid">
         <div className="projects-wrapper">
           {/* Primeira linha de projetos */}
           <div className="projects-row">
-            {allProjects.slice(0, Math.ceil(allProjects.length / 2)).map((project, index) => (
+            {projectsRow1.map((project, index) => (
               <div key={index} className="project-card">
                 <div className="project-image">
                   <img src={project.imgUrl} alt={project.title} />
@@ -187,8 +164,8 @@ const Projects = () => {
   
           {/* Segunda linha de projetos */}
           <div className="projects-row">
-            {allProjects.slice(Math.ceil(allProjects.length / 2)).map((project, index) => (
-              <div key={index + allProjects.length} className="project-card">
+            {projectsRow2.map((project, index) => (
+              <div key={index + projectsRow1.length} className="project-card">
                 <div className="project-image">
                   <img src={project.imgUrl} alt={project.title} />
                   <span className="project-category">{project.language}</span>
@@ -210,8 +187,6 @@ const Projects = () => {
       </div>
     </section>
   );
-  
-  
   
 };
 
