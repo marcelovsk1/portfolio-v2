@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Intro.css";
 import Bird from "../../img/birds.JPG"; 
 
-const textArray = ["Hello World!", "console.log('Hi')", "print('Hey!')", "<h1>Welcome</h1>"];
+const textArray = ["<h1>Welcome</h1>", "console.log('Hi')", "print('Hello World!')"];
 
 const Intro = () => {
   const [text, setText] = useState("");
@@ -35,7 +35,7 @@ const Intro = () => {
   }, [charIndex, index, isDeleting]);
 
   return (
-    <section className="intro-section">
+    <section className="intro-section" id="intro">
       <h1 className="intro-title">{text}<span className="cursor">|</span></h1>
 
       <div className="intro-image-container">
@@ -44,7 +44,7 @@ const Intro = () => {
           alt="Bird"
           className="intro-image"
         />
-        <p className="image-caption">Photo taken by me in January 2017</p>
+        <p className="image-caption">This photo was taken by me in January 2017</p>
       </div>
     </section>
   );

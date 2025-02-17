@@ -20,6 +20,7 @@ const Navbar = () => {
     <nav className={`navbar ${isVisible ? "visible" : "hidden"}`}>
       <div className="nav-left">
         <ul className="nav-links">
+          <li><a href="#intro" style={{ color: "#5500ff" }}>{"</>"}</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Experience</a></li>
           <li><a href="#playground">Playground</a></li>

@@ -1,6 +1,9 @@
+import React, { useEffect, useRef } from "react";
 import "./Projects.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Importe as imagens
+// Importação das imagens dos projetos
 import drakenike from "../../img/shoesapp.png";
 import netflixapp from "../../img/netflixapp.png";
 import weatherApp from "../../img/weatherapp.png";
@@ -17,7 +20,57 @@ import game_portfolio from "../../img/game_dev.png";
 import boxrumble from "../../img/box.png";
 import world from "../../img/BEAUTIFUL_3D_WORLD1.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Projects = () => {
+  const projectsRef = useRef([]);
+
+  useEffect(() => {
+    // Efeito de entrada dos cards
+    gsap.fromTo(
+      projectsRef.current,
+      { opacity: 0, y: 50, scale: 0.9 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.2, // Delay suave entre cada card
+        scrollTrigger: {
+          trigger: ".projects-grid",
+          start: "top 85%",
+          end: "top 30%",
+          scrub: 1,
+        },
+      }
+    );
+
+    // Efeito Parallax sutil no scroll
+    gsap.to(".projects-grid", {
+      y: -20,
+      scrollTrigger: {
+        trigger: ".projects-grid",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    // Efeito de Hover - Pequena inclinação e escala nos cards
+    projectsRef.current.forEach((card) => {
+      gsap.set(card, { transformOrigin: "center center" });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, { scale: 1.05, rotateX: 5, rotateY: 5, duration: 0.3, ease: "power1.out" });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { scale: 1, rotateX: 0, rotateY: 0, duration: 0.3, ease: "power1.out" });
+      });
+    });
+  }, []);
+
   // Todos os projetos
   const projectsRow1 = [
     {
@@ -124,7 +177,7 @@ const Projects = () => {
       year: "2024",
     },
     {
-      title: "My First Portfolio",
+      title: "My FirstPortfolio",
       description: "My personal portfolio, built with React.js",
       imgUrl: portfolio,
       link: "https://github.com/marcelovsk1/my-new-portfolio",
@@ -164,13 +217,14 @@ const Projects = () => {
   return (
     <section className="projects-section" id="playground">
       <h2 className="projects-title">Playground</h2>
-      <p className="project-description">A collection of my work, featuring mobile apps, web applications, games, and automation projects built with Swift, React, Shopify, Rails, Unity, and Python.</p>
+      <p className="project-description">
+        A collection of my work, featuring mobile apps, web applications, games, and automation projects built with Swift, React, Shopify, Rails, Unity, and Python.
+      </p>
       <div className="projects-grid">
         <div className="projects-wrapper">
-          {/* Primeira linha de projetos */}
           <div className="projects-row">
             {projectsRow1.map((project, index) => (
-              <div key={index} className="project-card">
+              <div key={index} className="project-card" ref={(el) => (projectsRef.current[index] = el)}>
                 <div className="project-image">
                   <img src={project.imgUrl} alt={project.title} />
                   <span className="project-category">{project.language}</span>
@@ -180,19 +234,15 @@ const Projects = () => {
                   <p>{project.description}</p>
                   <div className="buttons">
                     <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                    {project.liveDemo && (
-                      <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-  
-          {/* Segunda linha de projetos */}
+
           <div className="projects-row">
             {projectsRow2.map((project, index) => (
-              <div key={index + projectsRow1.length} className="project-card">
+              <div key={index + projectsRow1.length} className="project-card" ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}>
                 <div className="project-image">
                   <img src={project.imgUrl} alt={project.title} />
                   <span className="project-category">{project.language}</span>
@@ -202,19 +252,16 @@ const Projects = () => {
                   <p>{project.description}</p>
                   <div className="buttons">
                     <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                    {project.liveDemo && (
-                      <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
-                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
   );
-  
 };
 
 export default Projects;
