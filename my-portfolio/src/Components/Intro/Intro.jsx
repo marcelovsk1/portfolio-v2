@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Intro.css";
+import Bird from "../../img/birds.JPG"; 
 
 const textArray = ["Hello World!", "console.log('Hi')", "print('Hey!')", "<h1>Welcome</h1>"];
 
@@ -20,7 +21,7 @@ const Intro = () => {
         setTimeout(() => setCharIndex((prev) => prev - 1), deletingSpeed);
       } else {
         setIsDeleting(false);
-        setIndex((prev) => (prev + 1) % textArray.length); // Vai para o próximo texto
+        setIndex((prev) => (prev + 1) % textArray.length); 
       }
     } else {
       if (charIndex < currentText.length) {
@@ -39,10 +40,11 @@ const Intro = () => {
 
       <div className="intro-image-container">
         <img
-          src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3BkbWlzYzctd2syMjYzMjMxMC1pbWFnZV8xLmpwZw.jpg"
-          alt="Blurry Portrait"
+          src={Bird}
+          alt="Bird"
           className="intro-image"
         />
+        <p className="image-caption">Photo taken by me in January 2017</p>
       </div>
     </section>
   );

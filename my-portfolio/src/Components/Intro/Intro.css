@@ -10,7 +10,7 @@
   padding: 0;
   margin: 0;
   width: 90vw;
-  /* padding-bottom: 5rem; */
+  padding-bottom: -15rem !important;
 }
 
 .intro-title {
@@ -27,7 +27,6 @@
   padding-left: 5vw;
 }
 
-
 .intro-image-container {
   width: 100%;
   max-width: 100vw;
@@ -36,17 +35,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
+  border: none;
 }
 
 .intro-image {
   width: 100%;
-  border: 3px solid black;
-  height: 600px;
+  height: 650px;
+  object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
+  border: none;
 }
 
+.image-caption {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
 
 @media (max-width: 768px) {
   .intro-title {
