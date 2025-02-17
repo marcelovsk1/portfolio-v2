@@ -22,33 +22,31 @@
 .toggleButton {
   background-color: transparent;
   color: #333;
-  border: none;
+  border: 2px solid #333; 
   padding: 10px 20px;
   cursor: pointer;
-  border: 1px solid #333;
   border-radius: 2px;
-  /* transition: transform 0.3s ease; */
+  transition: box-shadow 0.3s ease;
 }
 
 .toggleButton:hover {
   background-color: transparent;
-  border: 2px solid #333;
-  color: #333;
-  /* transform: translateY(-1px); */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); 
+  color: #c0c0c0;
 }
 
 .activeButton {
   background-color: #6200ea;
   color: white;
-  /* transition: transform 0.3s ease; */
+  border: 2px solid #6200ea; 
+  transition: box-shadow 0.3s ease;
 }
 
 .activeButton:hover {
-  /* transform: translateY(-1px); */
   background-color: #6200ea;
-  color: white;
-  border: none;
+  box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
 }
+
 
 .contentContainer {
   display: flex;

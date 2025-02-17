@@ -46,7 +46,6 @@
   color: black;
 }
 
-/* Foto no lado direito */
 .about-photo {
   max-width: 100%;
   max-height: 700px; 
@@ -56,12 +55,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* Animação ao passar o mouse */
-.about-photo:hover {
+/* .about-photo:hover {
   transform: scale(1.05);
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
