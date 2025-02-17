@@ -124,7 +124,7 @@ const Projects = () => {
       year: "2024",
     },
     {
-      title: "My Portfolio",
+      title: "My First Portfolio",
       description: "My personal portfolio, built with React.js",
       imgUrl: portfolio,
       link: "https://github.com/marcelovsk1/my-new-portfolio",
@@ -164,7 +164,7 @@ const Projects = () => {
   return (
     <section className="projects-section" id="playground">
       <h2 className="projects-title">Playground</h2>
-      <p className="project-description">A collection of my work, featuring mobile apps, web applications, games, and automation projects built with Swift, React, Shopify, Rails, Unity, and Python. Focused on clean code, innovation, and great user experiences.</p>
+      <p className="project-description">A collection of my work, featuring mobile apps, web applications, games, and automation projects built with Swift, React, Shopify, Rails, Unity, and Python.</p>
       <div className="projects-grid">
         <div className="projects-wrapper">
           {/* Primeira linha de projetos */}
