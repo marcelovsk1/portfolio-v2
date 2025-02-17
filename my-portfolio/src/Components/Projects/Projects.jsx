@@ -3,7 +3,6 @@ import "./Projects.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Importação das imagens dos projetos
 import drakenike from "../../img/shoesapp.png";
 import netflixapp from "../../img/netflixapp.png";
 import weatherApp from "../../img/weatherapp.png";
@@ -26,7 +25,6 @@ const Projects = () => {
   const projectsRef = useRef([]);
 
   useEffect(() => {
-    // Efeito de entrada dos cards
     gsap.fromTo(
       projectsRef.current,
       { opacity: 0, y: 50, scale: 0.9 },
@@ -36,7 +34,7 @@ const Projects = () => {
         scale: 1,
         duration: 1.2,
         ease: "power3.out",
-        stagger: 0.2, // Delay suave entre cada card
+        stagger: 0.2, 
         scrollTrigger: {
           trigger: ".projects-grid",
           start: "top 85%",
@@ -46,7 +44,6 @@ const Projects = () => {
       }
     );
 
-    // Efeito Parallax sutil no scroll
     gsap.to(".projects-grid", {
       y: -20,
       scrollTrigger: {
@@ -57,7 +54,6 @@ const Projects = () => {
       },
     });
 
-    // Efeito de Hover - Pequena inclinação e escala nos cards
     projectsRef.current.forEach((card) => {
       gsap.set(card, { transformOrigin: "center center" });
 
@@ -71,7 +67,6 @@ const Projects = () => {
     });
   }, []);
 
-  // Todos os projetos
   const projectsRow1 = [
     {
       title: "Shoes App",
@@ -138,6 +133,7 @@ const Projects = () => {
       year: "2023",
     },
   ];
+  
   const projectsRow2 = [
 
     {
