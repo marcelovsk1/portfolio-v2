@@ -75,6 +75,15 @@ const Projects = () => {
       language: "Unity/C#",
       year: "2024",
     },
+    {
+      title: "Mensager App",
+      description: "A messaging platform in Swift (send/receive messages instantly)",
+      imgUrl: mensagerapp,
+      link: "https://github.com/marcelovsk1/message-app1/tree/master",
+      liveDemo: null,
+      language: "Swift",
+      year: "2023",
+    },
   ];
   const projectsRow2 = [
 
@@ -124,6 +133,15 @@ const Projects = () => {
       year: "2024",
     },
     {
+      title: "Social Media App",
+      description: "Swift app replicating core features of a photo-sharing platform",
+      imgUrl: socialmedia,
+      link: "https://github.com/marcelovsk1/SocialMediaClone",
+      liveDemo: null,
+      language: "Swift",
+      year: "2023",
+    },
+    {
       title: "Game Dev Portfolio",
       description: "My Game portfolio, built in React.js",
       imgUrl: game_portfolio,
@@ -131,6 +149,15 @@ const Projects = () => {
       liveDemo: null,
       language: "React.Js",
       year: "2024",
+    },
+    {
+      title: "Weather App",
+      description: "Displays weather data from an API in a simple Swift app",
+      imgUrl: weatherApp,
+      link: "https://github.com/marcelovsk1/SwiftWeatherApp",
+      liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7120763456319799296/",
+      language: "Swift",
+      year: "2023",
     },
   ];
   
