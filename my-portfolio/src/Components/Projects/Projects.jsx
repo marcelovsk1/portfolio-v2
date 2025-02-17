@@ -45,7 +45,7 @@ const Projects = () => {
       imgUrl: newsapp,
       link: "https://github.com/marcelovsk1/NewsApp",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7188638289367621632/",
-      language: "Swift",
+      language: "SwiftUi",
       year: "2023",
     },
     {
@@ -81,7 +81,7 @@ const Projects = () => {
       imgUrl: mensagerapp,
       link: "https://github.com/marcelovsk1/message-app1/tree/master",
       liveDemo: null,
-      language: "Swift",
+      language: "SwiftUi",
       year: "2023",
     },
   ];
@@ -138,7 +138,7 @@ const Projects = () => {
       imgUrl: socialmedia,
       link: "https://github.com/marcelovsk1/SocialMediaClone",
       liveDemo: null,
-      language: "Swift",
+      language: "SwiftUi",
       year: "2023",
     },
     {
@@ -156,7 +156,7 @@ const Projects = () => {
       imgUrl: weatherApp,
       link: "https://github.com/marcelovsk1/SwiftWeatherApp",
       liveDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7120763456319799296/",
-      language: "Swift",
+      language: "SwiftUi",
       year: "2023",
     },
   ];
