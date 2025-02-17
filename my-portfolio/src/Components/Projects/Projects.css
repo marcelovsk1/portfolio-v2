@@ -217,12 +217,85 @@
 
 @media (max-width: 768px) {
   .projects-section {
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    margin: 2rem auto 0;
   }
+
+  .projects-title {
+    font-size: 2.8rem; /* Ajuste fino no tamanho do título */
+    text-align: center;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
   .projects-grid {
-    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mantém duas colunas no mobile */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
   }
+
+  .projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mantém o layout */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .project-card {
-    width: 210px;
+    width: 100%;
+    max-width: 250px;
+    min-height: 320px;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-image {
+    height: 140px;
+  }
+
+  .project-category {
+    font-size: 11px;
+    padding: 5px 9px;
+    top: 8px;
+    left: 8px;
+  }
+
+  .project-content {
+    padding: 10px;
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .buttons {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .btn, .btn.demo {
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
+

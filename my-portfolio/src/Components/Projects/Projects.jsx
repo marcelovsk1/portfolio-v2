@@ -18,6 +18,7 @@ import portfolio from "../../img/myportfolio.png";
 import game_portfolio from "../../img/game_dev.png";
 import boxrumble from "../../img/box.png";
 import world from "../../img/BEAUTIFUL_3D_WORLD1.png";
+import poc from "../../img/poc.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,6 +132,15 @@ const Projects = () => {
       liveDemo: null,
       language: "SwiftUi",
       year: "2023",
+    },
+    {
+      title: "ZipFetch",
+      description: "A CRUD in Python, Flask, and SQLite that fetches address details via the Mail API.",
+      imgUrl: poc,
+      link: "https://github.com/marcelovsk1/poc",
+      liveDemo: null,
+      language: "Python/Flask",
+      year: "2025",
     },
   ];
   
