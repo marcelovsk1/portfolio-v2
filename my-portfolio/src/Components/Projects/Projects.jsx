@@ -15,10 +15,12 @@ import gameofcodesImg from "../../img/game_of_codes.png";
 import adidasoriginals from "../../img/adidas.png";
 import scraper from "../../img/scraper.png";
 import portfolio from "../../img/myportfolio.png";
-import game_portfolio from "../../img/game_dev.png";
+// import game_portfolio from "../../img/game_dev.png";
 import boxrumble from "../../img/box.png";
 import world from "../../img/BEAUTIFUL_3D_WORLD1.png";
 import poc from "../../img/poc.png";
+import pace from "../../img/pace.png";
+import artf from "../../img/artf.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,12 +72,21 @@ const Projects = () => {
 
   const projectsRow1 = [
     {
+      title: "Pace - Running App",
+      description: "My own running app, built with Swift. Comming soon!",
+      imgUrl: pace,
+      link: "",
+      liveDemo:"https://www.linkedin.com/in/marceloamaralalves/recent-activity/all/",
+      language: "SwiftUi",
+      year: "2024",
+    },
+    {
       title: "Shoes App",
       description: "3D CGI applied to Swift iOS",
       imgUrl: drakenike,
       link: "https://github.com/marcelovsk1/Shoes-App",
       liveDemo:
-        "https://www.linkedin.com/feed/update/urn:li:activity:7191889677941948416/",
+        "https://www.linkedin.com/posts/marceloamaralalves_iosdevelopment-swiftui-ios-activity-7191889677941948416-Qlsg/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
       language: "SwiftUi",
       year: "2024",
     },
@@ -147,6 +158,15 @@ const Projects = () => {
   const projectsRow2 = [
 
     {
+      title: "AI Chatbot",
+      description: "A chatbot that uses AI to answer questions and provide information",
+      imgUrl: artf,
+      link: "https://github.com/marcelovsk1/AI_ImageGenerator",
+      liveDemo: "https://www.linkedin.com/in/marceloamaralalves/recent-activity/all/",
+      language: "SwiftUi",
+      year: "2024",
+    },
+    {
       title: "Scraper Bot",
       description: "Automates web data collection through scraping techniques",
       imgUrl: scraper,
@@ -200,15 +220,15 @@ const Projects = () => {
       language: "SwiftUi",
       year: "2023",
     },
-    {
-      title: "Game Dev Portfolio",
-      description: "My Game portfolio, built in React.js",
-      imgUrl: game_portfolio,
-      link: "https://github.com/marcelovsk1/portfolio-games",
-      liveDemo: null,
-      language: "React.Js",
-      year: "2024",
-    },
+    // {
+    //   title: "Game Dev Portfolio",
+    //   description: "My Game portfolio, built in React.js",
+    //   imgUrl: game_portfolio,
+    //   link: "https://github.com/marcelovsk1/portfolio-games",
+    //   liveDemo: null,
+    //   language: "React.Js",
+    //   year: "2024",
+    // },
     {
       title: "Weather App",
       description: "Displays weather data from an API in a simple Swift app",
@@ -228,6 +248,7 @@ const Projects = () => {
       </p>
       <div className="projects-grid">
         <div className="projects-wrapper">
+          {/* Primeira linha de projetos */}
           <div className="projects-row">
             {projectsRow1.map((project, index) => (
               <div key={index} className="project-card" ref={(el) => (projectsRef.current[index] = el)}>
@@ -239,13 +260,26 @@ const Projects = () => {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="buttons">
-                    <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+                    {project.title === "Pace - Running App" ? (
+                      <>
+          
+                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                      </>
+                    ) : (
+                      <>
+                        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+                        {project.liveDemo && (
+                          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                        )}
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Segunda linha de projetos */}
           <div className="projects-row">
             {projectsRow2.map((project, index) => (
               <div key={index + projectsRow1.length} className="project-card" ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}>
@@ -258,6 +292,9 @@ const Projects = () => {
                   <p>{project.description}</p>
                   <div className="buttons">
                     <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+                    {project.liveDemo && (
+                      <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                    )}
                   </div>
                 </div>
               </div>

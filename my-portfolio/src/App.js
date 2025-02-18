@@ -4,6 +4,7 @@ import Intro from "./Components/Intro/Intro";
 import About from "./Components/About/About";
 import Experience from "./Components/Experience/Experience";
 import Projects from "./Components/Projects/Projects";
+import Footer from "./Components/Footer/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,38 +16,33 @@ function App() {
   const sectionsRef = useRef([]);
 
   useEffect(() => {
-    sectionsRef.current.forEach((section, index) => {
+    sectionsRef.current.forEach((section) => {
       gsap.fromTo(
         section,
-        { opacity: 1, y: 100 },
+        { opacity: 0, y: 80 }, // Começa com opacidade zero e mais deslocamento
         {
+          opacity: 1,
           y: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 1.5, // Aumenta a duração para suavizar
+          ease: "power1.out", // Transição mais fluida
           scrollTrigger: {
             trigger: section,
-            start: "top 80%",
+            start: "top 85%", // Ajusta o ponto inicial para uma transição mais suave
             end: "top 30%",
-            scrub: 1, 
+            scrub: 0.5, // Reduz o scrub para um efeito mais gradual
           },
         }
       );
     });
 
-    sectionsRef.current.forEach((section, index) => {
-      gsap.fromTo(
-        section,
-        { y: 0 },
-        {
-          y: -50, 
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1, 
-          },
-        }
-      );
+    gsap.to(sectionsRef.current, {
+      y: -30, // Desloca levemente para cima
+      scrollTrigger: {
+        trigger: sectionsRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.5, // Mantém o efeito gradual
+      },
     });
   }, []);
 
@@ -63,10 +59,13 @@ function App() {
         <div ref={(el) => (sectionsRef.current[2] = el)}>
           <Experience />
         </div>
-        <div ref={(el) => (sectionsRef.current[3] = el)}>
+        <div>
           <Projects />
         </div>
       </header>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

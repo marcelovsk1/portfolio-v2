@@ -1,25 +1,23 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-  <footer className='footer-container'>
-    <nav>
-      <div className="nav-links-container">
-      <div className="n-lista">
-        <ul className="nav-link">
-          <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            {/* <li><a href="#contact">Contact</a></li> */}
-        </ul>
-        <p className='copy'>Copyright &#169; 2024 Marcelo Amaral</p>
+    <footer className="footer">
+      <div className="footer-container">
+        <p className="footer-text">Designed & Built by Marcelo Amaral</p>
+        <div className="footer-links">
+          <a href="https://github.com/marcelovsk1" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/marceloamaralalves/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+        <p className="footer-copyright">© 2025 Marcelo Amaral. All rights reserved.</p>
       </div>
-      </div>
-    </nav>
-  </footer>
+    </footer>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;

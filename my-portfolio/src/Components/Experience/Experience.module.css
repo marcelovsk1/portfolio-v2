@@ -166,6 +166,15 @@
 
 @media (max-width: 768px) {
 
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    position: relative;
+    top: -50px;
+    /* padding: 20px; */
+    background: #fff;
+  }
+
   .title {
     text-align: center;
     font-size: 2.5rem;
@@ -177,6 +186,13 @@
   .contentContainer {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 2rem;
   }
 
   .skills {

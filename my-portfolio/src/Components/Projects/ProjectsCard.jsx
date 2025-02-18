@@ -72,7 +72,7 @@ export const ProjectCard = ({ title, description, imgUrl, link }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Live Demo
+              Live Demos
             </a>
           )}
         </div>

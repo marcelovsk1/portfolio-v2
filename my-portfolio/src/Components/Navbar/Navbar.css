@@ -6,43 +6,48 @@
   z-index: 1000;
   background: white;
   display: flex;
-  justify-content: space-between; 
   align-items: center;
   padding: 15px 5%;
   transition: opacity 0.3s ease, transform 0.3s ease;
   border-bottom: 2px solid #000000;
 }
 
-.navbar.hidden {
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
-}
-
-.nav-left,
-.nav-right {
+.nav-container {
+  width: 100%;
   display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
 }
 
+/* Alinha ícone e botão */
 .nav-left {
-  flex: 1;
-  padding-left: -20rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1; /* Ocupa o espaço necessário para empurrar os itens */
 }
 
-.nav-right {
-  justify-content: flex-end;
-  padding-right: 10rem;
-}
-
+/* Links principais alinhados à esquerda */
 .nav-links {
   display: flex;
-  gap: 50px;
+  gap: 30px;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: flex-start;
+  margin-left: 0; /* Garante que a lista começa no canto esquerdo */
 }
 
-.nav-links li a {
+/* Links sociais à direita */
+.nav-social {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin-left: auto; /* Empurra para a direita */
+}
+
+/* Estilos comuns dos links */
+.nav-links li a, .nav-social li a {
   font-size: 18px;
   font-weight: 600;
   color: black;
@@ -50,26 +55,79 @@
   transition: opacity 0.3s ease;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover, .nav-social li a:hover {
   opacity: 0.6;
+}
+
+/* Ícone no mobile */
+.intro-mobile {
+  display: none;
+}
+
+/* Botão do menu mobile */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
 }
 
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: center;
+    padding: 20px 5%;
   }
 
-  .nav-left, .nav-right {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5rem;
     width: 100%;
-    justify-content: center;
   }
 
-  .nav-links {
-    gap: 30px;
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 3rem;
+    top: 0.8rem;
   }
 
-  .nav-links li a {
-    font-size: 16px;
+  .nav-links, .nav-social {
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    /* position: absolute;
+    top: 60px; */
+    height: auto;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px 20px;
+    margin-right: 20rem;
+    /* border-top: 2px solid #333; */
+    /* border-bottom: 2px solid #000; */
+  }
+
+  .intro-desk {
+    display: flex;
+  }
+
+  .intro-mobile {
+    display: none;
+    position: relative;
+    text-decoration: none;
+    top: -.5rem;
+    text-align: center;
+}
+
+  .nav-links.open, .nav-social.open {
+    display: flex;
+  }
+
+  .nav-social {
+    margin-left: 0;
   }
 }
