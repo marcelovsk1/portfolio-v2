@@ -73,10 +73,10 @@ const Projects = () => {
   const projectsRow1 = [
     {
       title: "Pace - Running App",
-      description: "My own running app, built with Swift. Comming soon!",
+      description: "My own running app, built with Swift. Coming soon!",
       imgUrl: pace,
       link: "",
-      liveDemo:"https://www.linkedin.com/in/marceloamaralalves/recent-activity/all/",
+      liveDemo:"https://www.linkedin.com/posts/marceloamaralalves_ios-iosdevelopment-developer-activity-7213925743867662337-QBwl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
       language: "SwiftUi",
       year: "2024",
     },
@@ -162,7 +162,7 @@ const Projects = () => {
       description: "A chatbot that uses AI to answer questions and provide information",
       imgUrl: artf,
       link: "https://github.com/marcelovsk1/AI_ImageGenerator",
-      liveDemo: "https://www.linkedin.com/in/marceloamaralalves/recent-activity/all/",
+      liveDemo: "https://www.linkedin.com/posts/marceloamaralalves_swiftui-gptprompt-artificialintelligence-activity-7206720699531423744-9-Ui?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
       language: "SwiftUi",
       year: "2024",
     },

@@ -73,7 +73,7 @@ const Experience = () => {
 
   return (
     <section className={styles.container} id="experience">
-      <h2 className={styles.title}>My Experience</h2>
+      <h2 className={styles.title}>Knowledge</h2>
 
       <div className={styles.contentContainer}>
         {/* Skills Section (sempre visível) */}

@@ -53,10 +53,10 @@ function App() {
         <div ref={(el) => (sectionsRef.current[0] = el)}>
           <Intro />
         </div>
-        <div ref={(el) => (sectionsRef.current[1] = el)}>
+        <div>
           <About />
         </div>
-        <div ref={(el) => (sectionsRef.current[2] = el)}>
+        <div>
           <Experience />
         </div>
         <div>

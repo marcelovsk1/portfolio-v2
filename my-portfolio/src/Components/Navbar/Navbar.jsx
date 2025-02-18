@@ -39,6 +39,11 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
+  // Função para fechar o menu ao clicar em um item
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={`navbar ${isVisible ? "visible" : "hidden"} ${isMenuOpen ? "menu-open" : ""}`} ref={menuRef}>
       <div className="nav-container">
@@ -50,12 +55,12 @@ const Navbar = () => {
 
         {/* Links */}
         <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <li><a href="#intro" className="intro-desk" style={{ color: "#5500ff" }}>{"</>"}</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#playground">Playground</a></li>
-          <li><a href="https://github.com/marcelovsk1">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/marceloamaralalves/">LinkedIn</a></li>
+          <li><a href="#intro" className="intro-desk" style={{ color: "#5500ff" }} onClick={handleMenuItemClick}>{"</>"}</a></li>
+          <li><a href="#about" onClick={handleMenuItemClick}>About</a></li>
+          <li><a href="#experience" onClick={handleMenuItemClick}>Knowledge</a></li>
+          <li><a href="#playground" onClick={handleMenuItemClick}>Playground</a></li>
+          <li><a href="https://github.com/marcelovsk1" onClick={handleMenuItemClick}>GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/marceloamaralalves/" onClick={handleMenuItemClick}>LinkedIn</a></li>
         </ul>
       </div>
     </nav>
