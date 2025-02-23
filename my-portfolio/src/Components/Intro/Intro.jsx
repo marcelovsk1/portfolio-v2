@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Intro.css";
 import Bird from "../../img/birds.JPG"; 
 
-const textArray = ["<h1>Welcome</h1>", "console.log('Hi')", "print('Hello World!')"];
+const textArray = ["<h1>Welcome</h1>", 
+  "console.log('Hi Visitor!')", 
+  "print('my portfolio')",];
 
 const Intro = () => {
   const [text, setText] = useState("");

@@ -1,21 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
+import Sidebar from "../Sidebar/Sidebar"; // Importa a Sidebar
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null); // Referência para capturar cliques fora do menu
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
+      setIsVisible(!(currentScrollY > lastScrollY && currentScrollY > 50));
       lastScrollY = currentScrollY;
     };
 
@@ -30,40 +28,47 @@ const Navbar = () => {
       }
     };
 
-    if (isMenuOpen) {
+    if (isMenuOpen || isSidebarOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMenuOpen]);
-
-  // Função para fechar o menu ao clicar em um item
-  const handleMenuItemClick = () => {
-    setIsMenuOpen(false);
-  };
+  }, [isMenuOpen, isSidebarOpen]);
 
   return (
-    <nav className={`navbar ${isVisible ? "visible" : "hidden"} ${isMenuOpen ? "menu-open" : ""}`} ref={menuRef}>
-      <div className="nav-container">
-        {/* Botão Mobile para abrir/fechar */}
-        <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          ☰
-        </button>
-        <li><a href="#intro" className="intro-mobile" style={{ color: "#5500ff" }}>{"</>"}</a></li>
+    <>
+      <nav className={`navbar ${isVisible ? "visible" : "hidden"} ${isMenuOpen ? "menu-open" : ""}`} ref={menuRef}>
+        <div className="nav-container">
+          {/* Hamburger menu */}
+          <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            ☰
+          </button>
+          <li><a href="#intro" className="intro-mobile" style={{ color: "#5500ff" }}>{"</>"}</a></li>
 
-        {/* Links */}
-        <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <li><a href="#intro" className="intro-desk" style={{ color: "#5500ff" }} onClick={handleMenuItemClick}>{"</>"}</a></li>
-          <li><a href="#about" onClick={handleMenuItemClick}>About</a></li>
-          <li><a href="#experience" onClick={handleMenuItemClick}>Knowledge</a></li>
-          <li><a href="#playground" onClick={handleMenuItemClick}>Playground</a></li>
-          <li><a href="https://github.com/marcelovsk1" onClick={handleMenuItemClick}>GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/marceloamaralalves/" onClick={handleMenuItemClick}>LinkedIn</a></li>
-        </ul>
-      </div>
-    </nav>
+          {/* Links */}
+          <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+            <li><a href="#intro" className="intro-desk" style={{ color: "#5500ff" }}>{"</>"}</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Knowledge</a></li>
+            <li><a href="#playground">Playground</a></li>
+            <li><a href="https://github.com/marcelovsk1">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/marceloamaralalves/">LinkedIn</a></li>
+
+            {/* AI Friend Link */}
+            <li>
+              <a href="#" className="ai-friend-link" onClick={(e) => { e.preventDefault(); setIsSidebarOpen(true); }}>
+                AI Friend 🤖
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Sidebar */}
+      <Sidebar isSidebarOpen={isSidebarOpen} closeSidebar={() => setIsSidebarOpen(false)} />
+    </>
   );
 };
 

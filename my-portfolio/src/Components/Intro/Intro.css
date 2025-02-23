@@ -13,10 +13,8 @@
 }
 
 .intro-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 7vw; /* Ajusta dinamicamente com a tela */
+  display: block;  /* Garante que o texto seja empilhado */
+  font-size: 7vw;  /* Mantém a responsividade */
   letter-spacing: -2px;
   font-weight: 900;
   color: rgb(0, 0, 0);
@@ -24,6 +22,22 @@
   text-align: left;
   width: 100%;
   padding-left: 5vw;
+  white-space: pre-wrap; /* Mantém as quebras de linha corretamente */
+}
+
+.typed-text {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .intro-image-container {
