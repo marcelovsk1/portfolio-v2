@@ -41,11 +41,18 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${isVisible ? "visible" : "hidden"} ${isMenuOpen ? "menu-open" : ""}`} ref={menuRef}>
         <div className="nav-container">
-          {/* Hamburger menu */}
-          <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            ☰
+          {/* Logo responsivo */}
+          <a href="#intro" className="intro-mobile" style={{ color: "#5500ff" }}>{"</>"}</a>
+          
+          {/* Hamburger menu para mobile - versão aprimorada */}
+          <button 
+            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span className="menu-line"></span>
+            <span className="menu-line"></span>
+            <span className="menu-line"></span>
           </button>
-          <li><a href="#intro" className="intro-mobile" style={{ color: "#5500ff" }}>{"</>"}</a></li>
 
           {/* Links */}
           <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
@@ -57,11 +64,11 @@ const Navbar = () => {
             <li><a href="https://www.linkedin.com/in/marceloamaralalves/">LinkedIn</a></li>
 
             {/* AI Friend Link */}
-            <li>
+            {/* <li>
               <a href="#" className="ai-friend-link" onClick={(e) => { e.preventDefault(); setIsSidebarOpen(true); }}>
                 AI Friend 🤖
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>

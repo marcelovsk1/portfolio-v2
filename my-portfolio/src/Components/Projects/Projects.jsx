@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import "./Projects.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react';
+import './Projects.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import drakenike from "../../img/shoesapp.png";
 import netflixapp from "../../img/netflixapp.png";
@@ -15,12 +15,16 @@ import gameofcodesImg from "../../img/game_of_codes.png";
 import adidasoriginals from "../../img/adidas.png";
 import scraper from "../../img/scraper.png";
 import portfolio from "../../img/myportfolio.png";
-// import game_portfolio from "../../img/game_dev.png";
 import boxrumble from "../../img/box.png";
 import world from "../../img/BEAUTIFUL_3D_WORLD1.png";
 import poc from "../../img/poc.png";
-import pace from "../../img/pace.png";
 import artf from "../../img/artf.png";
+import slider from "../../img/slider.png";
+import product from "../../img/product.png";
+import discount from "../../img/discount.png";
+import menu from "../../img/menu.png";
+import bubble from "../../img/bubble.png";
+import pace from "../../img/pace.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,45 +32,22 @@ const Projects = () => {
   const projectsRef = useRef([]);
 
   useEffect(() => {
-    gsap.fromTo(
-      projectsRef.current,
-      { opacity: 0, y: 50, scale: 0.9 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.2,
-        ease: "power3.out",
-        stagger: 0.2, 
-        scrollTrigger: {
-          trigger: ".projects-grid",
-          start: "top 85%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
-
-    gsap.to(".projects-grid", {
-      y: -20,
-      scrollTrigger: {
-        trigger: ".projects-grid",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-      },
-    });
-
-    projectsRef.current.forEach((card) => {
-      gsap.set(card, { transformOrigin: "center center" });
-
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, { scale: 1.05, rotateX: 5, rotateY: 5, duration: 0.3, ease: "power1.out" });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, { scale: 1, rotateX: 0, rotateY: 0, duration: 0.3, ease: "power1.out" });
-      });
+    projectsRef.current.forEach((project, index) => {
+      gsap.fromTo(
+        project,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: project,
+            start: 'top bottom-=100',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
     });
   }, []);
 
@@ -79,6 +60,24 @@ const Projects = () => {
       liveDemo:"https://www.linkedin.com/posts/marceloamaralalves_ios-iosdevelopment-developer-activity-7213925743867662337-QBwl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACnkvjYBFLH6fERka3lmREFy9lG26V6EjR8",
       language: "SwiftUi",
       year: "2024",
+    },
+    {
+      title: "eCommerceMenu",
+      description: "A menu for an eCommerce website, built with Liquid and Shopify",
+      imgUrl: menu,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2023",
+    },
+    {
+      title: "Product Card",
+      description: "Product card built with Liquid and Shopify",
+      imgUrl: product,
+      link: "https://github.com/KittySou/game-of-codes",
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2023",
     },
     {
       title: "Shoes App",
@@ -154,9 +153,35 @@ const Projects = () => {
       year: "2025",
     },
   ];
-  
-  const projectsRow2 = [
 
+  const projectsRow2 = [
+    {
+      title: "eCommerce Filter Collection",
+      description: "Filter bubbles for collections, built with Liquid and Shopify",
+      imgUrl: bubble,
+      link: null,
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2024",
+    },
+    {
+      title: "Discount Bar",
+      description: "A discount bar which provides a discount code to the customer, built with Liquid and Shopify",
+      imgUrl: discount,
+      link: null,
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2024",
+    },
+    {
+      title: "Slider Section Collection",
+      description: "A collection of slider sections, built with Liquid and 100% customized",
+      imgUrl: slider,
+      link: null,
+      liveDemo: "https://evryjewels.ca/",
+      language: "Shopify",
+      year: "2024",
+    },
     {
       title: "AI Chatbot",
       description: "A chatbot that uses AI to answer questions and provide information",
@@ -239,7 +264,7 @@ const Projects = () => {
       year: "2023",
     },
   ];
-  
+
   return (
     <section className="projects-section" id="playground">
       <h2 className="projects-title">Playground</h2>
@@ -253,16 +278,19 @@ const Projects = () => {
             {projectsRow1.map((project, index) => (
               <div key={index} className="project-card" ref={(el) => (projectsRef.current[index] = el)}>
                 <div className="project-image">
-                  <img src={project.imgUrl} alt={project.title} />
+                  <img 
+                    src={project.imgUrl} 
+                    alt={project.title}
+                    className="project-img"
+                  />
                   <span className="project-category">{project.language}</span>
                 </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="buttons">
-                    {project.title === "Pace - Running App" ? (
+                    {project.title === "Pace - Running App" || project.title === "Product Card" || project.title === "eCommerceMenu" ? (
                       <>
-          
                         <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
                       </>
                     ) : (
@@ -284,16 +312,28 @@ const Projects = () => {
             {projectsRow2.map((project, index) => (
               <div key={index + projectsRow1.length} className="project-card" ref={(el) => (projectsRef.current[index + projectsRow1.length] = el)}>
                 <div className="project-image">
-                  <img src={project.imgUrl} alt={project.title} />
+                  <img 
+                    src={project.imgUrl} 
+                    alt={project.title}
+                    className="project-img"
+                  />
                   <span className="project-category">{project.language}</span>
                 </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="buttons">
-                    <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
-                    {project.liveDemo && (
-                      <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                    {project.title === "Slider Section Collection" || project.title === "Discount Bar" || project.title === "eCommerce Filter Collection" ? (
+                      <>
+                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                      </>
+                    ) : (
+                      <>
+                        <a href={project.link} target="_blank" rel="noreferrer" className="btn">GitHub</a>
+                        {project.liveDemo && (
+                          <a href={project.liveDemo} target="_blank" rel="noreferrer" className="btn demo">Live Demo</a>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>

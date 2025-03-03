@@ -46,7 +46,7 @@ const About = () => {
     <section className='aboutSection' id="about">
       <div className="about-container">
         <div className="about-left" ref={textRef}>
-          <h2 className="about-title">Who’s This?</h2>
+          <h2 className="about-title">Who's This?</h2>
           <p className="about-text">
             As a <span>Software Developer</span> graduated from <span>Le Wagon Montreal,</span> I bring a strong foundation in frontend technologies combined with diverse academic qualifications. <br /><br />
             My academic journey includes a Bachelor's degree in <span>Business Administration</span> from <span>PUCPR</span> and a Master's in <span>Growth and Digital Strategy</span> from <span>PUCRS.</span> <br /><br />
